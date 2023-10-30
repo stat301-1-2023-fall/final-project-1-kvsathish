@@ -73,9 +73,9 @@ Some potential issues that may arise include cleaning the data of missing values
 
 #### Timeline:
 
-Week 1 - Figure out how to attack the central question (Which player is the greatest of all time?)
+Week 1 - Figure out how to attack the central question (Which player is the greatest of all time?).
 
-Week 2 - Plan out the EDA, tidy the data, and begin creating graphics to serve as evidence in answering the central question
+Week 2 - Plan out the EDA, tidy the data, and begin creating graphics to serve as evidence in answering the central question.
 
 Week 3 - Finish building all the necessary graphics needed for proper analysis of the data. Decide whether advanced stats should be incorporated in the final EDA.
 
