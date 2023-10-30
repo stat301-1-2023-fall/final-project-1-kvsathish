@@ -38,7 +38,7 @@ GitHub (free account) cannot store large files. If you try to commit and push a 
 ## Data source
 
 
-The source of my data is a user on `Kaggle.com`, named Xavier. Their username is `xvivancos`, and they are a data science enthusiast that are also a Kaggle Grandmaster. Their roots are from Barcelona and Catalonia, Spain. The dataset is named `Michael Jordan, Kobe Bryant and Lebron James stats`^[Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv]. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference^[Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv].
+The source of my data is a user on `Kaggle.com`, named Xavier. Their username is `xvivancos`, and they are a data science enthusiast that are also a Kaggle Grandmaster. Their roots are from Barcelona and Catalonia, Spain. The dataset is named `Michael Jordan, Kobe Bryant and Lebron James stats`^[Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv]. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference^[Found on https://www.basketball-reference.com/].
 
 As of right now, I plan on utilizing a singular dataset called `allgames_stats` to compare the every game statistics between Lebron James, Michael Jordan, and Kobe Bryant. However, if I feel as though there is not enough observations or variable provided, I may dive into the `advanced_stats`, `allstar_games_stats`, `game_high_stats`, and `totals_stats` to combine information and analyze the data more holistically. If I need to join these datasets together, I plan on aligning variables based on similarity and function. I think I will be able to combine the data seamlessly if need be.
 
@@ -52,17 +52,31 @@ Personally, I have been one of the biggest Lebron James fans my whole life, but 
 
 ## Data quality & complexity check
 
+#### Loading and reading in data 
 
+library(tidyverse)
 
+allgames_stats <- read_csv("data/allgames_stats.csv")
 
-You should demonstrate that you can read in your dataset (if you are joining data you might have more than one). How many variables and observations do you have? How many categorical vs numerical variables? Are there any missingness issues?
+#### Analyzing the data
+
+In the dataset, there are 29 total variables and 4,254 total observations. Moreover, there are 6 categorical variables as well as 23 numerical variables. In terms of missingness, there is an issue for home games vs. away games. In this dataset, home games are represented with `NA` values for the `X` variable. Also, some of the statistical percentages reflect `NA` values because zero attempts were made. I plan to account for these `NA` values on top of games missed due to injury during my final reflection of the dataset in my EDA.
+
 
 ## Potential data issues
 
-Blah blah blah
-Identify any potential issues you may face in preparing or analyzing your data, including any merging, cleaning, or processing that may be necessary. Consider anything that may take extra time that is unique to your dataset(s).
+Some potential issues that may arise include cleaning the data of missing values, evaluating context for some statistics, and possibly merging the advanced player statistics in my final EDA. To clean the data of missing values, I plan to take out observations that are indicative of games the player missed due to injury or extenuating circumstances. By context, I mean properly evaluating the primes of player careers as well as accounting for the age of a player during certain seasons. In terms of the advanced statistics, I plan on utilizing advanced statistics to further prove or disprove certain trends seen in the initial analysis. Finally, it is important to understand how the game has actually changed over time, whether it be the importance of the three point line, spacing, or defensive intensity.
 
 ## Misc
 
-Blah Blah
-Students are encouraged to add any other information that they think would be useful to communicate about their data and their plan.
+#### Goal: Finish the project by Wednesday, November 29th.
+
+#### Timeline:
+
+Week 1 - Figure out how to attack the central question (Which player is the greatest of all time?)
+
+Week 2 - Plan out the EDA, tidy the data, and begin creating graphics to serve as evidence in answering the central question
+
+Week 3 - Finish building all the necessary graphics needed for proper analysis of the data. Decide whether advanced stats should be incorporated in the final EDA.
+
+Week 4 - Write up all the analysis and make sure to weigh the context behind all the final statistics for effective conclusions.

@@ -3071,15 +3071,32 @@ Warning
 </section>
 <section id="data-quality-complexity-check" class="level2">
 <h2 class="anchored" data-anchor-id="data-quality-complexity-check">Data quality &amp; complexity check</h2>
-<p>Blah blah blah You should demonstrate that you can read in your dataset (if you are joining data you might have more than one). How many variables and observations do you have? How many categorical vs numerical variables? Are there any missingness issues?</p>
+<section id="loading-and-reading-in-data" class="level4">
+<h4 class="anchored" data-anchor-id="loading-and-reading-in-data">Loading and reading in data</h4>
+<p>library(tidyverse)</p>
+<p>allgames_stats &lt;- read_csv(“data/allgames_stats.csv”)</p>
+</section>
+<section id="analyzing-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="analyzing-the-data">Analyzing the data</h4>
+<p>In the dataset, there are 29 total variables and 4,254 total observations. Moreover, there are 6 categorical variables as well as 23 numerical variables. In terms of missingness, there is an issue for home games vs. away games. In this dataset, home games are represented with <code>NA</code> values for the <code>X</code> variable. Also, some of the statistical percentages reflect <code>NA</code> values because zero attempts were made. I plan to account for these <code>NA</code> values on top of games missed due to injury during my final reflection of the dataset in my EDA.</p>
+</section>
 </section>
 <section id="potential-data-issues" class="level2">
 <h2 class="anchored" data-anchor-id="potential-data-issues">Potential data issues</h2>
-<p>Blah blah blah Identify any potential issues you may face in preparing or analyzing your data, including any merging, cleaning, or processing that may be necessary. Consider anything that may take extra time that is unique to your dataset(s).</p>
+<p>Some potential issues that may arise include cleaning the data of missing values, evaluating context for some statistics, and possibly merging the advanced player statistics in my final EDA. To clean the data of missing values, I plan to take out observations that are indicative of games the player missed due to injury or extenuating circumstances. By context, I mean properly evaluating the primes of player careers as well as accounting for the age of a player during certain seasons. In terms of the advanced statistics, I plan on utilizing advanced statistics to further prove or disprove certain trends seen in the initial analysis. Finally, it is important to understand how the game has actually changed over time, whether it be the importance of the three point line, spacing, or defensive intensity.</p>
 </section>
 <section id="misc" class="level2">
 <h2 class="anchored" data-anchor-id="misc">Misc</h2>
-<p>Blah Blah Students are encouraged to add any other information that they think would be useful to communicate about their data and their plan.</p>
+<section id="goal-finish-the-project-by-wednesday-november-29th." class="level4">
+<h4 class="anchored" data-anchor-id="goal-finish-the-project-by-wednesday-november-29th.">Goal: Finish the project by Wednesday, November 29th.</h4>
+</section>
+<section id="timeline" class="level4">
+<h4 class="anchored" data-anchor-id="timeline">Timeline:</h4>
+<p>Week 1 - Figure out how to attack the central question (Which player is the greatest of all time?)</p>
+<p>Week 2 - Plan out the EDA, tidy the data, and begin creating graphics to serve as evidence in answering the central question</p>
+<p>Week 3 - Finish building all the necessary graphics needed for proper analysis of the data. Decide whether advanced stats should be incorporated in the final EDA.</p>
+<p>Week 4 - Write up all the analysis and make sure to weigh the context behind all the final statistics for effective conclusions.</p>
+</section>
 </section>
 
 
@@ -3087,7 +3104,7 @@ Warning
 
 <ol>
 <li id="fn1"><p>Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Found on https://www.basketball-reference.com/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
