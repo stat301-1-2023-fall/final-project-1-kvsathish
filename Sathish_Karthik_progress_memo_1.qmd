@@ -18,14 +18,7 @@ execute:
 from: markdown+emoji 
 ---
 
-::: {.callout-important}
-## Memo format
 
-Like all other submissions for this course, we expect the memo to be neat and well organized.
-
-You should make this document your own. This is a template. To help with this we have added a date to the yaml above (good whenever writing memos). You should remove this block when making this document your own.
-
-:::
 
 ::: {.callout-tip icon=false}
 
@@ -44,20 +37,32 @@ GitHub (free account) cannot store large files. If you try to commit and push a 
 
 ## Data source
 
-Blah blah blah^[where blah blah came from, an example of footnote]
+
+The source of my data is a user on `Kaggle.com`, named Xavier. Their username is `xvivancos`, and they are a data science enthusiast that are also a Kaggle Grandmaster. Their roots are from Barcelona and Catalonia, Spain. The dataset is named `Michael Jordan, Kobe Bryant and Lebron James stats`^[Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv]. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference^[Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv].
+
+As of right now, I plan on utilizing a singular dataset called `allgames_stats` to compare the every game statistics between Lebron James, Michael Jordan, and Kobe Bryant. However, if I feel as though there is not enough observations or variable provided, I may dive into the `advanced_stats`, `allstar_games_stats`, `game_high_stats`, and `totals_stats` to combine information and analyze the data more holistically. If I need to join these datasets together, I plan on aligning variables based on similarity and function. I think I will be able to combine the data seamlessly if need be.
+
 
 ## Why this data
 
-Blah blah blah^[another footnote]
+I chose this dataset because I have thought long and hard about who the greatest basketball player of all time is. This question is somewhat subjective based on your individual meaning of "great." Not only have I looked into a range of factors that contribute to being the greatest, I've also had countless debates with other people about who the GOAT of basketball is. Instead of simply pointing to the number of championships a player has won, I wanted to look into the statistics of all games played by Lebron James, Michael Jordan, and Kobe Bryant to justify who the best player is at the core of the game. I know that longevity of a player's career and injuries may influence the data, but I plan to account for any confounding variables based on my ball knowledge and further thorough research. 
+
+Personally, I have been one of the biggest Lebron James fans my whole life, but I plan to put biases aside to let the numbers decide who the greatest player of all time is. I understand that Michael Jordan and Kobe Bryant have culturally changed the game, and I would like to simplify argument for the greatest player of all time to the raw statistics provided by the dataset.
+
 
 ## Data quality & complexity check
 
-Blah blah blah
+
+
+
+You should demonstrate that you can read in your dataset (if you are joining data you might have more than one). How many variables and observations do you have? How many categorical vs numerical variables? Are there any missingness issues?
 
 ## Potential data issues
 
 Blah blah blah
+Identify any potential issues you may face in preparing or analyzing your data, including any merging, cleaning, or processing that may be necessary. Consider anything that may take extra time that is unique to your dataset(s).
 
 ## Misc
 
 Blah Blah
+Students are encouraged to add any other information that they think would be useful to communicate about their data and their plan.
