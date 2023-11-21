@@ -30,12 +30,15 @@ from: markdown+emoji
 :::
 
 
-### Loading packages and datasets
+### Packages and Datasets Loaded
 ```{r}
 #| echo: false
 
 library(tidyverse)
 library(knitr)
+library(naniar)
 allgames_stats <- read_csv("data/allgames_stats.csv")
 ```
 
+# Brainstorm
+Who should've won the most MVPs? This justifies who was the best NBA player from the first fifteen seasons of their respective careers. The 
