@@ -19,6 +19,8 @@ from: markdown+emoji
 ---
 
 
+
+
 ::: {.callout-tip icon=false}
 
 ## Github Repo Link
@@ -26,4 +28,14 @@ from: markdown+emoji
 
 [My Github Repo Link](https://github.com/stat301-1-2023-fall/final-project-1-kvsathish)
 :::
----
+
+
+### Loading packages and datasets
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+allgames_stats <- read_csv("data/allgames_stats.csv")
+```
+
