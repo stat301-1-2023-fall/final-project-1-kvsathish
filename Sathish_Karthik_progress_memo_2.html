@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Karthik Sathish">
-<meta name="dcterms.date" content="2023-11-08">
+<meta name="dcterms.date" content="2023-11-21">
 
-<title>Progress Memo 1</title>
+<title>Progress Memo 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -2987,23 +2987,13 @@ vertical-align: -.125em;
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#data-source" id="toc-data-source" class="nav-link active" data-scroll-target="#data-source">Data source</a></li>
-  <li><a href="#why-this-data" id="toc-why-this-data" class="nav-link" data-scroll-target="#why-this-data">Why this data</a></li>
-  <li><a href="#data-quality-complexity-check" id="toc-data-quality-complexity-check" class="nav-link" data-scroll-target="#data-quality-complexity-check">Data quality &amp; complexity check</a></li>
-  <li><a href="#potential-data-issues" id="toc-potential-data-issues" class="nav-link" data-scroll-target="#potential-data-issues">Potential data issues</a></li>
-  <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">Misc</a></li>
-  </ul>
-</nav>
+  
 </div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Progress Memo 1</h1>
+<h1 class="title">Progress Memo 2</h1>
 <p class="subtitle lead"></p><p>Final Project<br>
 Data Science 1 with R (STAT 301-1)</p><p></p>
 </div>
@@ -3022,7 +3012,7 @@ Data Science 1 with R (STAT 301-1)</p><p></p>
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 8, 2023</p>
+      <p class="date">November 21, 2023</p>
     </div>
   </div>
   
@@ -3045,54 +3035,9 @@ Github Repo Link
 <p><a href="https://github.com/stat301-1-2023-fall/final-project-1-kvsathish">My Github Repo Link</a></p>
 </div>
 </div>
-<section id="data-source" class="level2">
-<h2 class="anchored" data-anchor-id="data-source">Data source</h2>
-<p>The source of my data is a user on <code>Kaggle.com</code>, named Xavier. Their username is <code>xvivancos</code>, and they are a data science enthusiast that are also a Kaggle Grandmaster. Their roots are from Barcelona and Catalonia, Spain. The dataset is named <code>Michael Jordan, Kobe Bryant and Lebron James stats</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p>As of right now, I plan on utilizing a singular dataset called <code>allgames_stats</code> to compare the every game statistics between Lebron James, Michael Jordan, and Kobe Bryant. However, if I feel as though there is not enough observations or variable provided, I may dive into the <code>advanced_stats</code>, <code>allstar_games_stats</code>, <code>game_high_stats</code>, and <code>totals_stats</code> to combine information and analyze the data more holistically. If I need to join these datasets together, I plan on aligning variables based on similarity and function. I think I will be able to combine the data seamlessly if need be.</p>
-</section>
-<section id="why-this-data" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-data">Why this data</h2>
-<p>I chose this dataset because I have thought long and hard about who the greatest basketball player of all time is. This question is somewhat subjective based on your individual meaning of “great.” Not only have I looked into a range of factors that contribute to being the greatest, I’ve also had countless debates with other people about who the GOAT of basketball is. Instead of simply pointing to the number of championships a player has won, I wanted to look into the statistics of all games played by Lebron James, Michael Jordan, and Kobe Bryant to justify who the best player is at the core of the game. I know that longevity of a player’s career and injuries may influence the data, but I plan to account for any confounding variables based on my ball knowledge and further thorough research.</p>
-<p>Personally, I have been one of the biggest Lebron James fans my whole life, but I plan to put biases aside to let the numbers decide who the greatest player of all time is. I understand that Michael Jordan and Kobe Bryant have culturally changed the game, and I would like to simplify argument for the greatest player of all time to the raw statistics provided by the dataset.</p>
-</section>
-<section id="data-quality-complexity-check" class="level2">
-<h2 class="anchored" data-anchor-id="data-quality-complexity-check">Data quality &amp; complexity check</h2>
-<section id="loading-and-reading-in-data" class="level4">
-<h4 class="anchored" data-anchor-id="loading-and-reading-in-data">Loading and reading in data</h4>
-<p>library(tidyverse)</p>
-<p>allgames_stats &lt;- read_csv(“data/allgames_stats.csv”)</p>
-</section>
-<section id="analyzing-the-data" class="level4">
-<h4 class="anchored" data-anchor-id="analyzing-the-data">Analyzing the data</h4>
-<p>In the dataset, there are 29 total variables and 4,254 total observations. Moreover, there are 6 categorical variables as well as 23 numerical variables. In terms of missingness, there is an issue for home games vs. away games. In this dataset, home games are represented with <code>NA</code> values for the <code>X</code> variable. Also, some of the statistical percentages reflect <code>NA</code> values because zero attempts were made. I plan to account for these <code>NA</code> values on top of games missed due to injury during my final reflection of the dataset in my EDA.</p>
-</section>
-</section>
-<section id="potential-data-issues" class="level2">
-<h2 class="anchored" data-anchor-id="potential-data-issues">Potential data issues</h2>
-<p>Some potential issues that may arise include cleaning the data of missing values, evaluating context for some statistics, and possibly merging the advanced player statistics in my final EDA. To clean the data of missing values, I plan to take out observations that are indicative of games the player missed due to injury or extenuating circumstances. By context, I mean properly evaluating the primes of player careers as well as accounting for the age of a player during certain seasons. In terms of the advanced statistics, I plan on utilizing advanced statistics to further prove or disprove certain trends seen in the initial analysis. Finally, it is important to understand how the game has actually changed over time, whether it be the importance of the three point line, spacing, or defensive intensity.</p>
-</section>
-<section id="misc" class="level2">
-<h2 class="anchored" data-anchor-id="misc">Misc</h2>
-<section id="goal-finish-the-project-by-wednesday-november-29th." class="level4">
-<h4 class="anchored" data-anchor-id="goal-finish-the-project-by-wednesday-november-29th.">Goal: Finish the project by Wednesday, November 29th.</h4>
-</section>
-<section id="timeline" class="level4">
-<h4 class="anchored" data-anchor-id="timeline">Timeline:</h4>
-<p>Week 1 - Figure out how to attack the central question (Which player is the greatest of all time?).</p>
-<p>Week 2 - Plan out the EDA, tidy the data, and begin creating graphics to serve as evidence in answering the central question.</p>
-<p>Week 3 - Finish building all the necessary graphics needed for proper analysis of the data. Decide whether advanced stats should be incorporated in the final EDA.</p>
-<p>Week 4 - Write up all the analysis and make sure to weigh the context behind all the final statistics for effective conclusions.</p>
-</section>
-</section>
+<hr>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Found on https://www.basketball-reference.com/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
