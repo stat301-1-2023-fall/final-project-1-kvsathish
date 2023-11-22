@@ -40,13 +40,33 @@ library(naniar)
 allgames_stats <- read_csv("data/allgames_stats.csv")
 ```
 
-# Brainstorm
+## Approaching the Central Question
+
 Who should've won the most MVPs?
 
 MVP based on (PRA + Steals + Blocks) / MP - shows who the most impactful player is for how long they played
 
 Separate by regular season and playoffs
 
-How to get around the different time periods? Account for point inflation across different years (1st year for Kobe, Lebron, and Jordan) - see avg PPG for each team that the player was a part of
 
 This justifies who was the best NBA player from the first fifteen seasons of their respective careers. The 
+
+Do for first five years, and show process will be repeated for next 10 years
+
+## Data Cleaning
+
+## Progress for Project
+
+#### Univariate Analyses
+
+#### Bivariate Analyses
+
+## Reflection
+
+## Next Steps
+How to get around the different time periods? Account for point inflation across different years (1st year for Kobe, Lebron, and Jordan) - see avg PPG for each team that the player was a part of
+
+Subtract turnovers from assists
+
+
+
