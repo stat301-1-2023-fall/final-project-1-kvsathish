@@ -57,9 +57,16 @@ Do for first five years, and show process will be repeated for next 10 years
 
 ## Progress for Project
 
+
+
 #### Univariate Analyses
 
+![](plots/kobe_score1.png)
+
+
 #### Bivariate Analyses
+
+![](plots/kobe_sbd1.png)
 
 ## Reflection
 
