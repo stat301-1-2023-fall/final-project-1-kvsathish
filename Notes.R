@@ -101,4 +101,44 @@ lebron_fy_mean <- allgames_stats %>%
 
 kable(lebron_fy_mean)
 
+## Jordan first year ----
+jordan_first_year <- allgames_stats %>%
+  filter(Date >= as.Date("1984-10-26") & Date <= as.Date("1985-04-13")) |> 
+  filter(Player == "Michael Jordan") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  select(Player, Date, Score) 
 
+jordan_score1 <- ggplot(jordan_first_year, aes(Score)) +
+  geom_boxplot() +
+  labs(title = "Distribution of Calculated Score", subtitle = "For Jordan's First Season",
+       x = "Score", y = NULL)
+
+ggsave(
+  filename = "plots/jordan_score1.png",
+  plot = jordan_score1,
+  units = "in"
+)
+
+jordan_sbd1 <- ggplot(jordan_first_year, aes(Date, Score)) +
+  geom_point() +
+  geom_smooth() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Calculated Score Over Michael Jordan's First Season")
+
+ggsave(
+  filename = "plots/jordan_sbd1.png",
+  plot = jordan_sbd1,
+  width = 5,
+  units = "in"
+)
+
+jordan_first_year <- head(jordan_first_year, 5)
+kable(jordan_first_year)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1984-10-26") & Date <= as.Date("1985-04-13")) |> 
+  filter(Player == "Michael Jordan") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)

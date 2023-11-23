@@ -104,6 +104,28 @@ kable(lebron_fy_mean)
 
 ```
 
+Michael Jordan's First Season
+
+```{r}
+#| echo: false
+
+jordan_first_year <- allgames_stats %>%
+  filter(Date >= as.Date("1984-10-26") & Date <= as.Date("1985-04-13")) |> 
+  filter(Player == "Michael Jordan") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  select(Player, Date, Score)
+
+jordan_first_year <- head(jordan_first_year, 5)
+kable(jordan_first_year)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1984-10-26") & Date <= as.Date("1985-04-13")) |> 
+  filter(Player == "Michael Jordan") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
 
 #### Univariate Analyses
 
@@ -111,11 +133,15 @@ kable(lebron_fy_mean)
 
 ![](plots/lebron_score1.png)
 
+![](plots/jordan_score1.png)
+
 #### Bivariate Analyses
 
 ![](plots/kobe_sbd1.png)
 
 ![](plots/lebron_sbd1.png)
+
+![](plots/jordan_sbd1.png)
 
 ## Reflection
 
