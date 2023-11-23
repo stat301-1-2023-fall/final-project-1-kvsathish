@@ -55,6 +55,8 @@ Do for first five years, and show process will be repeated for next 10 years
 
 ## Data Cleaning
 
+In terms of cleaning the data, the `NA` values present in the dataset never factored into the specific variables I plan to manipulate for analysis. Since these specific variables didn't have `NA` values, I didn't eliminate the observations that might have had an `NA` value for a separate variable. Also, I made sure to convert the `MP` variable, representing minutes played, from `difftime` type to a numeric type so my calculated score could be performed with the corresponding data.
+
 ## Progress for Project
 
 Kobe Bryant's First Season
