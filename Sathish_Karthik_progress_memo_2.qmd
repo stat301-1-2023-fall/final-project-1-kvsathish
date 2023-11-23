@@ -57,16 +57,65 @@ Do for first five years, and show process will be repeated for next 10 years
 
 ## Progress for Project
 
+Kobe Bryant's First Season
+
+```{r}
+#| echo: false
+
+kobe_first_year <- allgames_stats %>%
+  filter(Date >= as.Date("1996-11-03") & Date <= as.Date("1997-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  select(Player, Date, Score) 
+
+kobe_first_year <- head(kobe_first_year, 5)
+kable(kobe_first_year)
+
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1996-11-03") & Date <= as.Date("1997-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+```
+
+Lebron James' First Season
+
+```{r}
+#| echo: false
+
+lebron_first_year <- allgames_stats %>%
+  filter(Date >= as.Date("2003-10-29") & Date <= as.Date("2004-04-14")) |> 
+  filter(Player == "Lebron James") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  select(Player, Date, Score) 
+
+lebron_first_year <- head(lebron_first_year, 5)
+kable(lebron_first_year)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2003-10-29") & Date <= as.Date("2004-04-14")) |> 
+  filter(Player == "Lebron James") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+```
 
 
 #### Univariate Analyses
 
 ![](plots/kobe_score1.png)
 
+![](plots/lebron_score1.png)
 
 #### Bivariate Analyses
 
 ![](plots/kobe_sbd1.png)
+
+![](plots/lebron_sbd1.png)
 
 ## Reflection
 
@@ -74,6 +123,10 @@ Do for first five years, and show process will be repeated for next 10 years
 How to get around the different time periods? Account for point inflation across different years (1st year for Kobe, Lebron, and Jordan) - see avg PPG for each team that the player was a part of
 
 Subtract turnovers from assists
+
+For the fifteen years, maybe do intervals of 3 years to evaluate scores
+
+How to evaluate postseason scores? maybe 1.5x the MVP value
 
 
 
