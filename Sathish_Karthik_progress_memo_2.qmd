@@ -153,14 +153,13 @@ In the following bivariate analyses, I constructed scatterplots that represent t
 
 ## Reflection and Next Steps
 
+So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
 
-How to get around the different time periods? Account for point inflation across different years (1st year for Kobe, Lebron, and Jordan) - see avg PPG for each team that the player was a part of
+Another variable that I plan to involve in future analyses is `TOV` or turnovers. In my calculation, I will subtract turnovers from assists to receive more accurate scores about player performance statistically. The inclusion of turnovers adds a metric that accounts for the negative impact a player may have in each game during a season.
 
-Subtract turnovers from assists
+Finally, I am not quite sure how to evaluate scores from the postseason. This is a difficult area to compare because the three players made it to the postseason at different points in their career. Also, some made it further than others which could distort scores. I plan to exclude postseason success and scores from my analysis, so I can evaluate the raw statistical performance of each player during the first fifteen seasons of their respective careers.
 
-For the fifteen years, maybe do intervals of 3 years to evaluate scores
-
-How to evaluate postseason scores? maybe 1.5x the MVP value
+Before the extra credit deadline (11/29), I plan to account for the necessary adjustments above and complete my analysis for the next fourteen seasons of each player's career.
 
 
 
