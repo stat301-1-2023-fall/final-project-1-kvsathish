@@ -57,11 +57,9 @@ In terms of cleaning the data, the `NA` values present in the dataset never fact
 
 ## Progress for Project
 
-In the following formatted tables, I 
+In the following formatted tables, I show the first five scores from the first five games played by each of the three players in their first season. Also, I returned the average score over the course of the first season for Kobe Bryant, Lebron James, and Michael Jordan. Although these tables only reflect the first season of each player's career, I plan to repeat this process for calculating mean scores for the next fourteen seasons in my final project.
 
-This is for the first year, I'll repeat this process for fifteen seasons
-
-Kobe Bryant's First Season
+##### Kobe Bryant's First Season
 
 ```{r}
 #| echo: false
@@ -84,7 +82,7 @@ kobe_fy_mean <- allgames_stats %>%
 kable(kobe_fy_mean)
 ```
 
-Lebron James' First Season
+##### Lebron James' First Season
 
 ```{r}
 #| echo: false
@@ -108,7 +106,7 @@ kable(lebron_fy_mean)
 
 ```
 
-Michael Jordan's First Season
+##### Michael Jordan's First Season
 
 ```{r}
 #| echo: false
@@ -131,7 +129,11 @@ jordan_fy_mean <- allgames_stats %>%
 kable(jordan_fy_mean)
 ```
 
-#### Univariate Analyses
+According to the mean scores found for each of the three players across the course of their respective first season, Michael Jordan would have won the first MVP between the players. This is because he earned the greatest mean score of approximately 3.16, compared to 2.41 for Lebron James and 1.96 for Kobe Bryant.
+
+### Univariate Analyses
+
+In the following univariate analyses, I constructed boxplots that represent the distribution of scores in each of the player's first season. These graphics help visualize the centers of the respective scores as well as how the scores are spread in the first season for each player. These boxplots are displayed because they reveal where the middle 50% of scores lie (IQR) as well as if there are outliers that may be skewing the data one way or another.
 
 ![](plots/kobe_score1.png)
 
@@ -139,7 +141,9 @@ kable(jordan_fy_mean)
 
 ![](plots/jordan_score1.png)
 
-#### Bivariate Analyses
+### Bivariate Analyses
+
+In the following bivariate analyses, I constructed scatterplots that represent the scores by the date during each of the player's first season. These graphics help how scores might have changed over the course of the season for each player. These scatterplots are displayed because they reveal if any type of relationship exists between different times during the season and a player's score. According to the linear line of best fit, it can be concluded that players generally showed improved scores over the course of the season. This is because the three linear lines of best fit are all weakly positive.
 
 ![](plots/kobe_sbd1.png)
 
@@ -147,9 +151,9 @@ kable(jordan_fy_mean)
 
 ![](plots/jordan_sbd1.png)
 
-## Reflection
+## Reflection and Next Steps
 
-## Next Steps
+
 How to get around the different time periods? Account for point inflation across different years (1st year for Kobe, Lebron, and Jordan) - see avg PPG for each team that the player was a part of
 
 Subtract turnovers from assists
