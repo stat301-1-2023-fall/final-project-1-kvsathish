@@ -42,22 +42,24 @@ allgames_stats <- read_csv("data/allgames_stats.csv")
 
 ## Approaching the Central Question
 
-Who should've won the most MVPs?
+My central question revolves around which of the three basketball players in the dataset is the greatest basketball player of all time. To approach this question, I've decided to evaluate it by who would have won the MVP the most times between the three individuals. I'm restricting the timeframe to the first fifteen seasons of each player's respective career. This was decided to limit out the longevity arguments for players that have had longer careers than others. Now, I understand that the Most Valuable Player in the NBA is often based on a player's merit as well as team success. To assign the MVP to one of these three players in their first fifteen seasons, I have come up with my own metric score for evaluation.
 
-MVP based on (PRA + Steals + Blocks) / MP - shows who the most impactful player is for how long they played
+The MVP will be a much more statistically based award. This is because I will be using a variety of stats reflecting a player's true impact over every single minute played during a season. To measure offensive output, I am including points, assists, and rebounds. For defensive output, I am additionally using steals and blocks. The specific `Score` for each player in a given season will be calculated by:
 
-Separate by regular season and playoffs
+Score = (Points + Assists + Rebounds + Steals + Blocks) / Minutes Played
 
+Once this score is calculated for each game played in a given season for a player, the average of all the scores in a season will be computed as a final reflection to compare. The greatest final mean score, each season, will justify who should've won the MVP. Then, I plan to add up MVPs for each player and deduce which player is the most valuable the most number of seasons. I believe that this analysis justifies who was the greatest NBA player from the first fifteen seasons of their respective careers.
 
-This justifies who was the best NBA player from the first fifteen seasons of their respective careers. The 
-
-Do for first five years, and show process will be repeated for next 10 years
 
 ## Data Cleaning
 
 In terms of cleaning the data, the `NA` values present in the dataset never factored into the specific variables I plan to manipulate for analysis. Since these specific variables didn't have `NA` values, I didn't eliminate the observations that might have had an `NA` value for a separate variable. Also, I made sure to convert the `MP` variable, representing minutes played, from `difftime` type to a numeric type so my calculated score could be performed with the corresponding data.
 
 ## Progress for Project
+
+In the following formatted tables, I 
+
+This is for the first year, I'll repeat this process for fifteen seasons
 
 Kobe Bryant's First Season
 
