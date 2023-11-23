@@ -41,6 +41,7 @@ allgames_stats <- read_csv("data/allgames_stats.csv")
 ```
 
 ## Approaching the Central Question
+The dataset for analysis is named `Michael Jordan, Kobe Bryant and Lebron James stats`^[Found on https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv]. Some of the raw statistical data is also from Basketball Reference^[Found on https://www.basketball-reference.com/].
 
 My central question revolves around which of the three basketball players in the dataset is the greatest basketball player of all time. To approach this question, I've decided to evaluate it by who would have won the MVP the most times between the three individuals. I'm restricting the timeframe to the first fifteen seasons of each player's respective career. This was decided to limit out the longevity arguments for players that have had longer careers than others. Now, I understand that the Most Valuable Player in the NBA is often based on a player's merit as well as team success. To assign the MVP to one of these three players in their first fifteen seasons, I have come up with my own metric score for evaluation.
 
