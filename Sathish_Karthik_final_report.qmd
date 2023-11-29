@@ -1,5 +1,5 @@
 ---
-title: "Final Report"
+title: "The GOAT Debate: Revealing the Greatest Basketball Player of All Time"
 subtitle: |
   | Final Project 
   | Data Science 1 with R (STAT 301-1)
