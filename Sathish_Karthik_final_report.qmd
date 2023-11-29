@@ -25,3 +25,48 @@ from: markdown+emoji
 
 [My Github Repo Link](https://github.com/stat301-1-2023-fall/final-project-1-kvsathish)
 :::
+
+## Introduction
+
+Overview of the EDA. What was the motivation for this analysis? What initial curiosities or research questions motivated you? Describe the data source(s) you will use to build a predictive model. If you are obtaining information from websites you should cite those in your References.
+
+### Overview
+
+The following EDA stems from being a long-time fan of the NBA. From countless debates with people about the GOAT, I have thought long and hard about who is the greatest basketball player of all time. This question is somewhat subjective based on your individual meaning of "great." Not only have I looked into a range of factors that contribute to being the greatest, but I've also gotten into heated arguments with friends about who the GOAT of basketball is. Instead of simply pointing to the number of championships a player has won, I wanted to look into the statistics of all games played by Lebron James, Michael Jordan, and Kobe Bryant to justify who the best player is at the core of the game. I understand that longevity of a player's career and injuries may influence the data, but I plan to account for any confounding variables based on my ball knowledge and further thorough research. 
+
+Personally, I have been one of the biggest Lebron James fans my whole life, but I plan to put biases aside to let the numbers decide who the greatest player of all time is. I understand that Lebron James, Michael Jordan, and Kobe Bryant have all culturally changed the game. However, I would like to simplify the argument for the greatest basketball player of all time by analyzing the raw statistics provided.
+
+### Data Source
+
+The source of my data is a user on `Kaggle.com`, named Xavier. Their username is `xvivancos`, and they are a data science enthusiast that is also a Kaggle Grandmaster. Their roots are from Barcelona and Catalonia, Spain. The archive of interest is named `Michael Jordan, Kobe Bryant and Lebron James stats`. In the EDA, I utilize a singular dataset called `allgames_stats` to compare the statistics from every game played by Lebron James, Michael Jordan, and Kobe Bryant. Some of my data analysis is also derived from a dataset called `totals_stats` to organize the data in a more general way. The `allgames_stats` is a great dataset that bypasses the idea of player longevity (an argument used in Lebron's favor) by focusing on the first fifteen years of each player's career. This way, performance at corresponding points in each player's career can by compared to address the central question.
+
+### Approaching the Central Question
+
+My central question revolves around which of the three basketball players in the dataset is the greatest basketball player of all time. To approach this question, I've decided to evaluate it by who was the most valuable player the most times between the three individuals. The timeframe is restricted to the first fifteen seasons of each player's respective career. This limits out the longevity arguments for players that have had longer careers than others. Now, I understand that the Most Valuable Player (MVP) in the NBA is often based on a player's merit as well as team success. To assign the MVP to one of these three players in their first fifteen seasons, I have come up with my own metric for evaluation.
+
+The MVP will be a much more statistically based award. This is because I will be using a variety of stats reflecting a player's true impact over every single minute played during a season. To measure offensive output, I am including points, assists, and rebounds. For defensive output, I am additionally using steals and blocks. The specific `Score` for each player in a given season will be calculated by:
+
+Score = (Points + Assists + Rebounds + Steals + Blocks) / Minutes Played
+
+I am adjusting `Points` scored by each player to account for point inflation/deflation during time periods in the NBA. This is done with a normalization of points scored by each player to total points averaged by each of their respective teams in a given year.
+
+Ex:
+Also, the number of points will be normalized by evaluating
+
+100 30
+
+110 30 27.27
+
+120 30 25 
+
+Once this score is calculated for each game played in a given season for a player, the average of all the scores in a season will be computed as a final reflection to compare. The greatest final mean score, each season, will justify who should've won the MVP. Then, I plan to add up MVPs for each player and deduce which player is the most valuable the most number of seasons. I believe that this analysis justifies who was the greatest NBA player from the first fifteen seasons of their respective careers.
+
+
+## References
+
+The dataset for analysis is named `Michael Jordan, Kobe Bryant and Lebron James stats`^[Found on [https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv](https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv)]. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference^[Found on [https://www.basketball-reference.com/](https://www.basketball-reference.com/)].
+
+
+## Conclusions
+
+So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
