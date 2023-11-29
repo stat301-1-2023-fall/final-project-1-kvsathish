@@ -1,4 +1,14 @@
+# L11 - functions and iteration ----
+# Stat 301-1
 
+## load packages ----
+library(tidyverse)
+library(palmerpenguins)
+library(knitr)
+
+## Exercises ----
+
+### Ex 1 ----
 
 
 library(tidyverse)

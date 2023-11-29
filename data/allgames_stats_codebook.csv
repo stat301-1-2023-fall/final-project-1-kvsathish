@@ -1,0 +1,30 @@
+Variables,Meaning
+G,sequential game number from the beginning of a given regular season or playoffs
+Date,date of a game
+Tm,team played for
+X,home or away game indicated by "NA: for home and "@"" for away
+Opp,oppenent team played against
+Result,win or loss
+GS,starting in a game (1 indicates player started, "0" indicates player didn't start)
+MP,total minutes played in a game (in seconds)
+FG,total number of made field goals
+FGA,total number of attempted field goals
+FG%,percentage of made field goals
+3P,total number of made three pointers
+3PA,total number of attempted three pointers
+3P%,percentage of made three pointers
+FT,total number of made free throws
+FTA,total number of attempted free throws
+FT%,percentage of made free throws
+ORB,total number of offensive rebounds
+DRB,total number of defensive rebounds
+TRB,number of total rebounds collected
+AST,total number of assists
+STL,total number of steals
+BLK,total number of blocks
+TOV,total number of turnovers
+PF,total number of personal fouls committed
+PTS,total number of points scored
+GmSc,NBA calculated total value for a player's overall statistical performance
+Player,name of NBA player
+RSorPO,regular season or playoffs
