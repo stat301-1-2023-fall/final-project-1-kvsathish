@@ -28,11 +28,11 @@ from: markdown+emoji
 
 ## Introduction
 
-Overview of the EDA. What was the motivation for this analysis? What initial curiosities or research questions motivated you? Describe the data source(s) you will use to build a predictive model. If you are obtaining information from websites you should cite those in your References.
+The following EDA stems from being a long-time fan of the NBA. From countless debates with people about the GOAT, I have thought long and hard about who is the greatest basketball player of all time. 
 
 ### Overview
 
-The following EDA stems from being a long-time fan of the NBA. From countless debates with people about the GOAT, I have thought long and hard about who is the greatest basketball player of all time. This question is somewhat subjective based on your individual meaning of "great." Not only have I looked into a range of factors that contribute to being the greatest, but I've also gotten into heated arguments with friends about who the GOAT of basketball is. Instead of simply pointing to the number of championships a player has won, I wanted to look into the statistics of all games played by Lebron James, Michael Jordan, and Kobe Bryant to justify who the best player is at the core of the game. I understand that longevity of a player's career and injuries may influence the data, but I plan to account for any confounding variables based on my ball knowledge and further thorough research. 
+This overarching question is somewhat subjective based on your individual meaning of "great." Not only have I looked into a range of factors that contribute to being the greatest, but I've also gotten into heated arguments with friends about who the GOAT of basketball is. Instead of simply pointing to the number of championships a player has won, I wanted to look into the statistics of all games played by Lebron James, Michael Jordan, and Kobe Bryant to justify who the best player is at the core of the game. I understand that longevity of a player's career and injuries may influence the data, but I plan to account for any confounding variables based on my ball knowledge and further thorough research. 
 
 Personally, I have been one of the biggest Lebron James fans my whole life, but I plan to put biases aside to let the numbers decide who the greatest player of all time is. I understand that Lebron James, Michael Jordan, and Kobe Bryant have all culturally changed the game. However, I would like to simplify the argument for the greatest basketball player of all time by analyzing the raw statistics provided.
 
@@ -59,7 +59,12 @@ Also, the number of points will be normalized by evaluating
 
 120 30 25 
 
-Once this score is calculated for each game played in a given season for a player, the average of all the scores in a season will be computed as a final reflection to compare. The greatest final mean score, each season, will justify who should've won the MVP. Then, I plan to add up MVPs for each player and deduce which player is the most valuable the most number of seasons. I believe that this analysis justifies who was the greatest NBA player from the first fifteen seasons of their respective careers.
+Once this score is calculated for each game played in a given season for a player, the average of all the scores in a season will be computed as a final reflection for comparison. The greatest final mean score, each season, will justify who should've won the MVP. Then, I plan to add up MVPs for each player and deduce which player is the most valuable the most number of seasons. 
+
+Following the computation of each player's score in their first fifteen seasons, I am going to evaluate it against turnovers and NBA GameScore to see how the score metric correlates with a variable reflecting negative player performance and with the overall efficiency score assigned to each player for a given game. Furthermore, I plan to also evaluate it against win totals in both the regular season and post season to see how effective the metric is with win success. I believe that this analysis justifies the quality of my score metric and who the greatest NBA player of all time is.
+
+
+## Data Overview and Quality
 
 
 ## References
