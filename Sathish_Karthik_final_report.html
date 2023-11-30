@@ -2997,7 +2997,14 @@ vertical-align: -.125em;
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
   <li><a href="#approaching-the-central-question" id="toc-approaching-the-central-question" class="nav-link" data-scroll-target="#approaching-the-central-question">Approaching the Central Question</a></li>
   </ul></li>
-  <li><a href="#data-overview-and-quality" id="toc-data-overview-and-quality" class="nav-link" data-scroll-target="#data-overview-and-quality">Data Overview and Quality</a></li>
+  <li><a href="#data-overview-and-quality" id="toc-data-overview-and-quality" class="nav-link" data-scroll-target="#data-overview-and-quality">Data Overview and Quality</a>
+  <ul class="collapse">
+  <li><a href="#analyzing-the-data" id="toc-analyzing-the-data" class="nav-link" data-scroll-target="#analyzing-the-data">Analyzing the data</a></li>
+  <li><a href="#issues-in-the-data" id="toc-issues-in-the-data" class="nav-link" data-scroll-target="#issues-in-the-data">Issues in the data</a></li>
+  <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">Cleaning the data</a></li>
+  <li><a href="#cleaning-the-data-1" id="toc-cleaning-the-data-1" class="nav-link" data-scroll-target="#cleaning-the-data-1">Cleaning the data</a></li>
+  <li><a href="#cleaning-the-data-2" id="toc-cleaning-the-data-2" class="nav-link" data-scroll-target="#cleaning-the-data-2">Cleaning the data</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
@@ -3077,6 +3084,27 @@ Github Repo Link
 </section>
 <section id="data-overview-and-quality" class="level2">
 <h2 class="anchored" data-anchor-id="data-overview-and-quality">Data Overview and Quality</h2>
+<p>The <code>allgames_stats</code> dataset is approximately 533 KB in size, and it is sufficiently complex for my analysis.</p>
+<p>A concise high level overview of the dataset(s) being explored. Description of the dataset(s) that covers basics: size, number of observations, number, of variables, variable types, and discussion of any quality issues (especially missingness and how it may impact the analysis). Highlight any important data collection issues or concerns. If over-technical, but important, then place technical details in Appendix: technical info.</p>
+<section id="analyzing-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="analyzing-the-data">Analyzing the data</h3>
+<p>In the dataset, there are 29 total variables and 4,254 total observations. Moreover, there are 6 categorical variables as well as 23 numerical variables. In terms of missingness, there is an issue for home games vs. away games.</p>
+</section>
+<section id="issues-in-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="issues-in-the-data">Issues in the data</h3>
+<p>In this dataset, home games are represented with <code>NA</code> values for the <code>X</code> variable. Also, some of the statistical percentages reflect <code>NA</code> values because zero attempts were made. This is often indicative of players missing a game due to injury or extenuating circumstanace. Another issue of missingness arises with the absence of GameScore values for Michael Jordan because it was a relatively new statistic during his early career. Sometimes, <code>NA</code> values would appear because some advanced statistics were not accounted for. Finally, an issue arises very rarely with the absence of a regular statistic like <code>Steals</code>. However, there is under a 0.260% rate of absence for values in similar variables.</p>
+</section>
+<section id="cleaning-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-the-data">Cleaning the data</h3>
+<p>I am accounting for these <code>NA</code> values on top of games missed due to injury during my final reflection of the dataset in my EDA.</p>
+</section>
+<section id="cleaning-the-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-the-data-1">Cleaning the data</h3>
+</section>
+<section id="cleaning-the-data-2" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-the-data-2">Cleaning the data</h3>
+<p>In terms of cleaning the data, the <code>NA</code> values present in the dataset never factored into the specific variables I plan to manipulate for analysis. Since these specific variables didn’t have <code>NA</code> values, I didn’t eliminate the observations that might have had an <code>NA</code> value for a separate variable. Also, I made sure to convert the <code>MP</code> variable, representing minutes played, from <code>difftime</code> type to a numeric type so my calculated score could be performed with the corresponding data.</p>
+</section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

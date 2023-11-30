@@ -66,6 +66,27 @@ Following the computation of each player's score in their first fifteen seasons,
 
 ## Data Overview and Quality
 
+The `allgames_stats` dataset is approximately 533 KB in size, and it is sufficiently complex for my analysis.
+
+A concise high level overview of the dataset(s) being explored. Description of the dataset(s) that covers basics: size, number of observations, number, of variables, variable types, and discussion of any quality issues (especially missingness and how it may impact the analysis). Highlight any important data collection issues or concerns. If over-technical, but important, then place technical details in Appendix: technical info.
+
+### Analyzing the data
+
+In the dataset, there are 29 total variables and 4,254 total observations. Moreover, there are 6 categorical variables as well as 23 numerical variables. In terms of missingness, there is an issue for home games vs. away games. 
+
+### Issues in the data
+In this dataset, home games are represented with `NA` values for the `X` variable. Also, some of the statistical percentages reflect `NA` values because zero attempts were made. This is often indicative of players missing a game due to injury or extenuating circumstanace. Another issue of missingness arises with the absence of GameScore values for Michael Jordan because it was a relatively new statistic during his early career. Sometimes, `NA` values would appear because some advanced statistics were not accounted for. Finally, an issue arises very rarely with the absence of a regular statistic like `Steals`. However, there is under a 0.260% rate of absence for values in similar variables.
+
+### Cleaning the data
+
+I am accounting for these `NA` values on top of games missed due to injury during my final reflection of the dataset in my EDA.
+
+### Cleaning the data
+
+
+### Cleaning the data
+
+In terms of cleaning the data, the `NA` values present in the dataset never factored into the specific variables I plan to manipulate for analysis. Since these specific variables didn't have `NA` values, I didn't eliminate the observations that might have had an `NA` value for a separate variable. Also, I made sure to convert the `MP` variable, representing minutes played, from `difftime` type to a numeric type so my calculated score could be performed with the corresponding data.
 
 ## References
 
