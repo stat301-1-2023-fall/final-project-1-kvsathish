@@ -3003,8 +3003,9 @@ vertical-align: -.125em;
   <li><a href="#issues-in-the-data" id="toc-issues-in-the-data" class="nav-link" data-scroll-target="#issues-in-the-data">Issues in the data</a></li>
   <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">Cleaning the data</a></li>
   </ul></li>
+  <li><a href="#explorations" id="toc-explorations" class="nav-link" data-scroll-target="#explorations">Explorations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
 </div>
@@ -3097,13 +3098,16 @@ Github Repo Link
 <p>how it impacts First, the <code>NA</code> values that indicated home vs. away games were inconsequential for my data analysis, so I ignored them. For statistical percentages, I also ignored <code>NA</code> values present because my analysis of player performance and output ignored efficiency statistics like percentage of field goals made. Instead, I am accounting for the <code>NA</code> values indicative of missed games and missing statistical percentages by utilizing <code>MP</code> or total minutes played in each game. This overcomes the absence of some values by narrowing the analysis to when each player was actively on the court. In order to use minutes played in the calculation of my score metric, I made sure to conver the <code>MP</code> variable from <code>difftime</code> type to a numeric type for effective manipulation of the corresponding data. The absence of GameScore values and regular statistical observations led to the removal of these minimal observations to clean out rare irregularities in the dataset for analysis.</p>
 </section>
 </section>
+<section id="explorations" class="level2">
+<h2 class="anchored" data-anchor-id="explorations">Explorations</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.</p>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <p>The dataset for analysis is named <code>Michael Jordan, Kobe Bryant and Lebron James stats</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-</section>
-<section id="conclusions" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
-<p>So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.</p>
 </section>
 
 
