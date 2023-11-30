@@ -82,6 +82,75 @@ First, the `NA` values that indicated home vs. away games were inconsequential f
 
 ## Explorations
 
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+library(naniar)
+library(lubridate)
+allgames_stats <- read_csv("data/allgames_stats.csv")
+```
+
+### Analyzing distributions of key variables
+
+#### Reasoning
+
+To begin, I analyzed the most representative statistics for player performance in terms of offensive output and defensive output. The variables chosen were Points, Assists, Rebounds, Steals, and Blocks. These numbers reflect how a player contributed to winning in any given game. Also, I analyzed minutes played, so I could use this variable along with the five previous variables to calculate a score representative of a player's performance whenever they were on the court.
+
+#### Plots and analysis
+![](plots/points_dist.png)
+The density plot for points revealed the probability of scoring a certain number of points in any given game for an indicated player. According to this graph, Michael Jordan had the greatest center of distribution, meaning the addition of Points to the score metric would most benefit Jordan.
+
+![](plots/assists_dist.png)
+The density plot for assists revealed the probability of recording a certain number of assists in any given game for an indicated player. According to this graph, Lebron James had the greatest center of distribution, meaning the addition of Assists to the score metric would most benefit Lebron.
+
+![](plots/rebounds_dist.png)
+The density plot for rebounds revealed the probability of recording a certain number of assists in any given game for an indicated player. According to this graph, Lebron James had the greatest center of distribution, meaning the addition of Blocks to the score metric would most benefit Lebron. This makes sense because Lebron is the tallest, so he is more likely to come down with rebounds.
+
+##### Summary Statistics of Steals by Player
+```{r}
+#| echo: false
+# create a summary table of steals per player
+stl_by_player <- allgames_stats %>%
+  group_by(Player) %>%
+  summarise(mean_steals = mean(STL, na.rm = TRUE),
+            min_steals = min(STL, na.rm = TRUE),
+            max_steals = max(STL, na.rm = TRUE),
+            total_steals = sum(STL, na.rm = TRUE))
+kable(stl_by_player)
+```
+
+The summary table for steals revealed the average steals recorded in a given game for an indicated player. According to the table, Michael Jordan had the greatest average steals, meaning the addition of Steals to the score metric would most benefit Jordan.
+
+##### Summary Statistics of Blocks by Player
+```{r}
+#| echo: false
+# create a summary table of blocks by player
+blk_by_player <- allgames_stats %>%
+  group_by(Player) %>%
+  summarise(mean_blocks = mean(BLK, na.rm = TRUE),
+            min_blocks = min(BLK, na.rm = TRUE),
+            max_blocks = max(BLK, na.rm = TRUE),
+            total_blocks = sum(BLK, na.rm = TRUE))
+kable(blk_by_player)
+```
+
+The summary table for blocks revealed the average blocks recorded in a given game for an indicated player. According to the table, Michael Jordan and Lebron James had a very similar average number of blocks, meaning the addition of Blocks to the score metric almost equally benefit Jordan and Lebron.
+
+
+![](plots/mp_dist.png)
+The histogram for minutes played revealed a unimodal, left-skewed distribution for all three players. The left skew can be attributed to early games in each player's career, where they each had to fight for minutes. However, the mode lies nearby the center of the distribution at approximately 40 minutes, indicating that all three players normally played around 40 minutes per game.
+
+#### Reflection
+Following the visualization of the important variables to be used in my Score metric, I noticed that the five variables seemed to benefit Lebron James and Michael Jordan somewhat equally. On the other hand, Kobe Bryant seemed to be lacking in each statistic. Because of each statistic values a unique but important part of the game, Points, Assists, Rebounds, Steals, and Blocks will be weighed equally on top of Minutes Played to reach a holistic score for the evaluation of MVP.
+
+### Exploring the new score metric
+
+### Evaluating the score metric against variables
+
+### Multivariate analyses 
+
 ## Conclusion
 So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
 
