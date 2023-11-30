@@ -78,15 +78,9 @@ In the dataset, there are 29 total variables and 4,254 total observations. Moreo
 In this dataset, home games are represented with `NA` values for the `X` variable. Also, some of the statistical percentages reflect `NA` values because zero attempts were made. This is often indicative of players missing a game due to injury or extenuating circumstanace. Another issue of missingness arises with the absence of GameScore values for Michael Jordan because it was a relatively new statistic during his early career. Sometimes, `NA` values would appear because some advanced statistics were not accounted for. Finally, an issue arises very rarely with the absence of a regular statistic like `Steals`. However, there is under a 0.260% rate of absence for values in similar variables.
 
 ### Cleaning the data
+how it impacts
+First, the `NA` values that indicated home vs. away games were inconsequential for my data analysis, so I ignored them. For statistical percentages, I also ignored `NA` values present because my analysis of player performance and output ignored efficiency statistics like percentage of field goals made. Instead, I am accounting for the `NA` values indicative of missed games and missing statistical percentages by utilizing `MP` or total minutes played in each game. This overcomes the absence of some values by narrowing the analysis to when each player was actively on the court. In order to use minutes played in the calculation of my score metric, I made sure to conver the `MP` variable from `difftime` type to a numeric type for effective manipulation of the corresponding data. The absence of GameScore values and regular statistical observations led to the removal of these minimal observations to clean out rare irregularities in the dataset for analysis.
 
-I am accounting for these `NA` values on top of games missed due to injury during my final reflection of the dataset in my EDA.
-
-### Cleaning the data
-
-
-### Cleaning the data
-
-In terms of cleaning the data, the `NA` values present in the dataset never factored into the specific variables I plan to manipulate for analysis. Since these specific variables didn't have `NA` values, I didn't eliminate the observations that might have had an `NA` value for a separate variable. Also, I made sure to convert the `MP` variable, representing minutes played, from `difftime` type to a numeric type so my calculated score could be performed with the corresponding data.
 
 ## References
 

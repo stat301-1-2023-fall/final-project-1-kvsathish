@@ -3002,8 +3002,6 @@ vertical-align: -.125em;
   <li><a href="#analyzing-the-data" id="toc-analyzing-the-data" class="nav-link" data-scroll-target="#analyzing-the-data">Analyzing the data</a></li>
   <li><a href="#issues-in-the-data" id="toc-issues-in-the-data" class="nav-link" data-scroll-target="#issues-in-the-data">Issues in the data</a></li>
   <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">Cleaning the data</a></li>
-  <li><a href="#cleaning-the-data-1" id="toc-cleaning-the-data-1" class="nav-link" data-scroll-target="#cleaning-the-data-1">Cleaning the data</a></li>
-  <li><a href="#cleaning-the-data-2" id="toc-cleaning-the-data-2" class="nav-link" data-scroll-target="#cleaning-the-data-2">Cleaning the data</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
@@ -3096,14 +3094,7 @@ Github Repo Link
 </section>
 <section id="cleaning-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="cleaning-the-data">Cleaning the data</h3>
-<p>I am accounting for these <code>NA</code> values on top of games missed due to injury during my final reflection of the dataset in my EDA.</p>
-</section>
-<section id="cleaning-the-data-1" class="level3">
-<h3 class="anchored" data-anchor-id="cleaning-the-data-1">Cleaning the data</h3>
-</section>
-<section id="cleaning-the-data-2" class="level3">
-<h3 class="anchored" data-anchor-id="cleaning-the-data-2">Cleaning the data</h3>
-<p>In terms of cleaning the data, the <code>NA</code> values present in the dataset never factored into the specific variables I plan to manipulate for analysis. Since these specific variables didn’t have <code>NA</code> values, I didn’t eliminate the observations that might have had an <code>NA</code> value for a separate variable. Also, I made sure to convert the <code>MP</code> variable, representing minutes played, from <code>difftime</code> type to a numeric type so my calculated score could be performed with the corresponding data.</p>
+<p>how it impacts First, the <code>NA</code> values that indicated home vs. away games were inconsequential for my data analysis, so I ignored them. For statistical percentages, I also ignored <code>NA</code> values present because my analysis of player performance and output ignored efficiency statistics like percentage of field goals made. Instead, I am accounting for the <code>NA</code> values indicative of missed games and missing statistical percentages by utilizing <code>MP</code> or total minutes played in each game. This overcomes the absence of some values by narrowing the analysis to when each player was actively on the court. In order to use minutes played in the calculation of my score metric, I made sure to conver the <code>MP</code> variable from <code>difftime</code> type to a numeric type for effective manipulation of the corresponding data. The absence of GameScore values and regular statistical observations led to the removal of these minimal observations to clean out rare irregularities in the dataset for analysis.</p>
 </section>
 </section>
 <section id="references" class="level2">
