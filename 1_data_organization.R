@@ -75,7 +75,16 @@ ggsave(
   units = "in"
 )
 
-# create a density plot for steals
+# create a summary table of steals per player
+stl_by_player <- allgames_stats %>%
+  group_by(Player) %>%
+  summarise(mean_steals = mean(STL, na.rm = TRUE),
+            min_steals = min(STL, na.rm = TRUE),
+            max_steals = max(STL, na.rm = TRUE),
+            total_steals = sum(STL, na.rm = TRUE))
+kable(stl_by_player)
+
+# extra steals stuff
 steals_dist <- ggplot(allgames_stats, aes(x = STL, fill = Player)) +
   geom_density(alpha = 0.5) +
   labs(title = "Density Distribution of Steals in Respective Careers",
@@ -90,7 +99,16 @@ ggsave(
   units = "in"
 )
 
-# create a density plot for blocks
+# create a summary table of blocks by player
+blk_by_player <- allgames_stats %>%
+  group_by(Player) %>%
+  summarise(mean_blocks = mean(BLK, na.rm = TRUE),
+            min_blocks = min(BLK, na.rm = TRUE),
+            max_blocks = max(BLK, na.rm = TRUE),
+            total_blocks = sum(BLK, na.rm = TRUE))
+kable(blk_by_player)
+
+# extra blocks stuff
 blocks_dist <- ggplot(allgames_stats, aes(x = BLK, fill = Player)) +
   geom_density(alpha = 0.5) +
   labs(title = "Density Distribution of Blocks in Respective Careers",

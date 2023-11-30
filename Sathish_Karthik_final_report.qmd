@@ -145,11 +145,521 @@ The histogram for minutes played revealed a unimodal, left-skewed distribution f
 #### Reflection
 Following the visualization of the important variables to be used in my Score metric, I noticed that the five variables seemed to benefit Lebron James and Michael Jordan somewhat equally. On the other hand, Kobe Bryant seemed to be lacking in each statistic. Because of each statistic values a unique but important part of the game, Points, Assists, Rebounds, Steals, and Blocks will be weighed equally on top of Minutes Played to reach a holistic score for the evaluation of MVP.
 
-### Exploring the new score metric
+### Calculating and exploring the new score metric
 
-### Evaluating the score metric against variables
+##### Season 1 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1996-11-03") & Date <= as.Date("1997-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
 
-### Multivariate analyses 
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2003-10-29") & Date <= as.Date("2004-04-14")) |> 
+  filter(Player == "Lebron James") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1984-10-26") & Date <= as.Date("1985-04-13")) |> 
+  filter(Player == "Michael Jordan") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 2 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1997-10-20") & Date <= as.Date("1998-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2004-10-20") & Date <= as.Date("2005-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1985-10-20") & Date <= as.Date("1986-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 3 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1998-10-20") & Date <= as.Date("1999-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2005-10-20") & Date <= as.Date("2006-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1986-10-20") & Date <= as.Date("1987-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 4 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1999-10-20") & Date <= as.Date("2000-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2006-10-20") & Date <= as.Date("2007-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1987-10-20") & Date <= as.Date("1988-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 5 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2000-10-20") & Date <= as.Date("2001-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2007-10-20") & Date <= as.Date("2008-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1988-10-20") & Date <= as.Date("1989-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 6 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2001-10-20") & Date <= as.Date("2002-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2008-10-20") & Date <= as.Date("2009-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1989-10-20") & Date <= as.Date("1990-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 7 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2002-10-20") & Date <= as.Date("2003-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2009-10-20") & Date <= as.Date("2010-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1990-10-20") & Date <= as.Date("1991-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 8 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2003-10-20") & Date <= as.Date("2004-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2010-10-20") & Date <= as.Date("2011-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1991-10-20") & Date <= as.Date("1992-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 9 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2004-10-20") & Date <= as.Date("2005-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2011-10-20") & Date <= as.Date("2012-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1992-10-20") & Date <= as.Date("1993-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 10 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2005-10-20") & Date <= as.Date("2006-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2012-10-20") & Date <= as.Date("2013-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1993-10-20") & Date <= as.Date("1994-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 11 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2006-10-20") & Date <= as.Date("2007-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2013-10-20") & Date <= as.Date("2014-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1994-10-20") & Date <= as.Date("1995-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 12 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2007-10-20") & Date <= as.Date("2008-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2014-10-20") & Date <= as.Date("2015-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1995-10-20") & Date <= as.Date("1996-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 13 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2008-10-20") & Date <= as.Date("2009-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2015-10-20") & Date <= as.Date("2016-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1996-10-20") & Date <= as.Date("1997-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 14 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2009-10-20") & Date <= as.Date("2010-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2016-10-20") & Date <= as.Date("2017-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1997-10-20") & Date <= as.Date("1998-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+##### Season 15 Scores
+```{r}
+#| echo: false
+kobe_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2010-10-20") & Date <= as.Date("2011-04-20")) |> 
+  filter(Player == "Kobe Bryant") |> 
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Kobe_Mean_Score = mean(Score))
+
+kable(kobe_fy_mean)
+
+lebron_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("2017-10-20") & Date <= as.Date("2018-04-20")) |> 
+  filter(Player == "Lebron James") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Lebron_Mean_Score = mean(Score))
+
+kable(lebron_fy_mean)
+
+jordan_fy_mean <- allgames_stats %>%
+  filter(Date >= as.Date("1998-10-20") & Date <= as.Date("1999-04-20")) |> 
+  filter(Player == "Michael Jordan") |>
+  select(PTS, AST, TRB, STL, BLK, MP) |> 
+  na.omit() |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  summarize(Jordan_Mean_Score = mean(Score))
+
+kable(jordan_fy_mean)
+```
+
+
+### Evaluating the score metric (multivariate analyses)
+
 
 ## Conclusion
 So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
