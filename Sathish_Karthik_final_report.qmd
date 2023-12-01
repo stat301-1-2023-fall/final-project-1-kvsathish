@@ -155,7 +155,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.929 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -175,7 +175,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.855 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -189,7 +189,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.915 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -209,7 +209,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.883 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -223,7 +223,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.986 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -243,7 +243,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.931 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -257,7 +257,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.96 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -277,7 +277,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.922 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -291,7 +291,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .958 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -311,7 +311,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .906 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -325,7 +325,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .99 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -345,7 +345,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .916 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -369,7 +369,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.983 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -379,7 +379,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * 0.913 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -403,7 +403,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .962 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -413,7 +413,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .894 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -447,7 +447,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .936 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -471,7 +471,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .966 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -495,7 +495,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .983 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -505,7 +505,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .993 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -529,7 +529,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .949 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -549,7 +549,7 @@ jordan_fy_mean <- allgames_stats %>%
   filter(Player == "Michael Jordan") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .98 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Jordan_Mean_Score = mean(Score))
 
 kable(jordan_fy_mean)
@@ -563,7 +563,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .964 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -573,7 +573,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .988 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -597,7 +597,7 @@ kobe_fy_mean <- allgames_stats %>%
   filter(Player == "Kobe Bryant") |> 
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .951 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Kobe_Mean_Score = mean(Score))
 
 kable(kobe_fy_mean)
@@ -607,7 +607,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .877 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -641,7 +641,7 @@ lebron_fy_mean <- allgames_stats %>%
   filter(Player == "Lebron James") |>
   select(PTS, AST, TRB, STL, BLK, MP) |> 
   na.omit() |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
+  mutate(Score = (PTS * .915 + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   summarize(Lebron_Mean_Score = mean(Score))
 
 kable(lebron_fy_mean)
@@ -657,6 +657,12 @@ jordan_fy_mean <- allgames_stats %>%
 kable(jordan_fy_mean)
 ```
 
+#### Scores over time
+
+![](plots/jscore_time.png)
+![](plots/lscore_time.png)
+
+![](plots/kscore_time.png)
 
 ### Evaluating the score metric (multivariate analyses)
 

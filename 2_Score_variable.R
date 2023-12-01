@@ -139,6 +139,77 @@ jordan_fy_mean <- allgames_stats %>%
 
 kable(jordan_fy_mean)
 
+## bivariate analyses ----
+
+# jordan analysis
+jordan_scores <- allgames_stats %>%
+  filter(RSorPO == "Regular Season") |> 
+  filter(Player == "Michael Jordan") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000)
+
+jscore_time <- ggplot(jordan_scores, aes(x = Date, y = Score)) +
+  geom_point() +
+  labs(title = "Scatterplot of Score vs. Year for Michael Jordan",
+       x = "Year",
+       y = "Score") +
+  geom_smooth() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+
+ggsave(
+  filename = "plots/jscore_time.png",
+  plot = jscore_time,
+  units = "in"
+)
+
+# lebron analysis
+lebron_scores <- allgames_stats %>%
+  filter(RSorPO == "Regular Season") |> 
+  filter(Player == "Lebron James") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000)
+
+lscore_time <- ggplot(lebron_scores, aes(x = Date, y = Score)) +
+  geom_point() +
+  labs(title = "Scatterplot of Score vs. Year for Lebron James",
+       x = "Year",
+       y = "Score") +
+  geom_smooth() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+
+ggsave(
+  filename = "plots/lscore_time.png",
+  plot = lscore_time,
+  units = "in"
+)
+
+# kobe analysis
+kobe_scores <- allgames_stats %>%
+  filter(RSorPO == "Regular Season") |> 
+  filter(Player == "Kobe Bryant") |> 
+  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000)
+
+ggplot(kobe_scores, aes(x = Date, y = Score)) +
+  geom_bin2d(bins = 20, aes(fill = ..count..), color = "white") +
+  scale_fill_gradient(low = "white", high = "blue") +  # Adjust color gradient
+  labs(title = "Heatmap of X vs. Y",
+       x = "X",
+       y = "Y")
+
+kscore_time <- ggplot(kobe_scores, aes(x = Date, y = Score)) +
+  geom_point() +
+  labs(title = "Scatterplot of Score vs. Year for Kobe Bryant",
+       x = "Year",
+       y = "Score") +
+  geom_smooth() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+
+ggsave(
+  filename = "plots/kscore_time.png",
+  plot = kscore_time,
+  units = "in"
+)
 
 ## MORE Notes for final project
 
