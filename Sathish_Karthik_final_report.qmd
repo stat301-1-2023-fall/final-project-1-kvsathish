@@ -50,15 +50,6 @@ Score = (Points + Assists + Rebounds + Steals + Blocks) / Minutes Played
 
 I am adjusting `Points` scored by each player to account for point inflation/deflation during time periods in the NBA. This is done with a normalization of points scored by each player to total points averaged by each of their respective teams in a given year.
 
-Ex:
-Also, the number of points will be normalized by evaluating
-
-100 30
-
-110 30 27.27
-
-120 30 25 
-
 Once this score is calculated for each game played in a given season for a player, the average of all the scores in a season will be computed as a final reflection for comparison. The greatest final mean score, each season, will justify who should've won the MVP. Then, I plan to add up MVPs for each player and deduce which player is the most valuable the most number of seasons. 
 
 Following the computation of each player's score in their first fifteen seasons, I am going to evaluate it against turnovers and NBA GameScore to see how the score metric correlates with a variable reflecting negative player performance and with the overall efficiency score assigned to each player for a given game. Furthermore, I plan to also evaluate it against win totals in both the regular season and post season to see how effective the metric is with win success. I believe that this analysis justifies the quality of my score metric and who the greatest NBA player of all time is.
@@ -92,7 +83,7 @@ library(lubridate)
 allgames_stats <- read_csv("data/allgames_stats.csv")
 ```
 
-### Analyzing distributions of key variables
+### Analyzing key variables
 
 #### Reasoning
 
@@ -146,6 +137,8 @@ The histogram for minutes played revealed a unimodal, left-skewed distribution f
 Following the visualization of the important variables to be used in my Score metric, I noticed that the five variables seemed to benefit Lebron James and Michael Jordan somewhat equally. On the other hand, Kobe Bryant seemed to be lacking in each statistic. Because of each statistic values a unique but important part of the game, Points, Assists, Rebounds, Steals, and Blocks will be weighed equally on top of Minutes Played to reach a holistic score for the evaluation of MVP.
 
 ### Calculating and exploring the new score metric
+
+First, I calculated the `Score` for each regular season game played by a selected player. Once the data manipulation was completed, I found the average score for each player by each season for the first 15 years in their respective careers. Then, I printed the scores to visualize which player was the most valuable for the most amount of seasons between the three legends.
 
 ##### Season 1 Scores
 ```{r}
@@ -657,14 +650,26 @@ jordan_fy_mean <- allgames_stats %>%
 kable(jordan_fy_mean)
 ```
 
+According to the average score calculations by season for the first fifteen years of each players career, there is a tie between Lebron James and Michael Jordan. Both players have the highest average scores for seven separate seasons. For Michael Jordan, these seasons included 1-5, 8, and 12. Meanwhile, it encompassed seasons 6, 7, 9, 11, and 13-15 for Lebron James. Kobe Bryant only surpassed Lebron and Jordan in season 10 of their respective careers. One important observation is that Jordan lacked an average score in seasons 10 and 15 because of extenuating circumstances such as early retirement and an NBA lockout. To further extrapolate the greatest basketball player of all time, I plan to compare the newly-created `Score` variable with other factors that contribute to a player's success.
+
 #### Scores over time
 
+In the following graphics, I am visualizing how the Score metric changed over time for each player.
+
 ![](plots/jscore_time.png)
+In this plot, both the smoothed trend line and the linear line of best fit reflect a moderately, negative relationship between `Year` and `Score`. It makes sense that Jordan's Score began decreasing around 1990, because that it when Scottie Pippen was added to the team. This addition may have caused Jordan to be less valuable to the team as there was more help. There is further decrease around 1995 with the later addition of Dennis Rodman.
+
 ![](plots/lscore_time.png)
+In this plot, the smoothed trend line is somewhat erratic through the course of Lebron's career while the linear line of best fit reflects a moderately, positive relationship between `Year` and `Score`. This indicates that Lebron was generally more valuable to his team as he got older. The fact that Lebron's greatest scores were found in season 15 are a true testament to his longevity. Since Lebron's peak came at year 15, it is reasonable to assume Lebron has maintained his valuable contributions statistically 5 more years (to this day) than Jordan or Kobe.
 
 ![](plots/kscore_time.png)
+In this plot, the smoothed trend line is demonstrates Kobe Bryant had greater scores in the middle of his career, compared to the beginning and end. Meanwhile, the linear line of best fit reflects a weakly, positive relationship between `Year` and `Score`. 
+
+Reflecting on all three plots, analyzing the relationships reveal that Michael Jordan was most valuable to his team in the first five years of his career, Kobe Bryant peaked in terms of his statistical contributions in the middle five years of his career, and Lebron James was the most meaningful to his teams in the seasons 10-15 of his career.
 
 ### Evaluating the score metric (multivariate analyses)
+
+
 
 
 ## Conclusion
