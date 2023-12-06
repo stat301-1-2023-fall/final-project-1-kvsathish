@@ -13,7 +13,7 @@ allgames_stats
 
 ## comparing Score and TOs ----
 
-p_scores <- allgames_stats %>%
+p_scores <- allgames_stats |> 
   filter(RSorPO == "Regular Season") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   mutate(Turnovers_Category = case_when(
@@ -42,7 +42,7 @@ ggsave(
 
 
 ## comparing Score and GmSc
-g_scores <- allgames_stats %>%
+g_scores <- allgames_stats |> 
   filter(RSorPO == "Regular Season") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000)
 
@@ -141,7 +141,7 @@ ggsave(
 
 
 
-# extra stuff
+## extra stuff ----
 win_totals <- allgames_stats |> 
   filter(RSorPO == "Regular Season", Player == "Kobe Bryant") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
@@ -162,9 +162,9 @@ ggplot(win_totals, aes(x = Date)) +
   theme_minimal()
 
 
-ag_win <- allgames_stats %>%
-  arrange(Date) %>%
-  group_by(Player) %>%
+ag_win <- allgames_stats |> 
+  arrange(Date) |> 
+  group_by(Player) |> 
   mutate(Win_Total = sum(Result == "W", na.rm = TRUE)) |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   mutate(Score_Category = case_when(
@@ -179,7 +179,7 @@ ag_win <- allgames_stats %>%
   ))
 
 
-# Create dodged barplot
+# make dodged barplot
 ggplot(ag_win, aes(x = Score_Category, y = Win_Total, fill = Player)) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7) +
   labs(title = "Proportion of Wins by Score and Player",

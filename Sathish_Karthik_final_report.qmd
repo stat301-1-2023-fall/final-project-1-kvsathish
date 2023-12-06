@@ -671,15 +671,26 @@ Reflecting on all three plots, analyzing the relationships reveal that Michael J
 
 ### Evaluating the score metric (multivariate analyses)
 
+#### Validation measures
 
+First, to test the credibility of the new score metric, I wanted to see if there was any relationship between a player's `Score` and bad performance. One statistic that heavily relates to negative performance of a basketball player is turnovers. This is because turnovers most likely result from a corresponding player's bad decision-making and results in an advantage for the opposing team. Below, I compare the turnovers by category to a distribution of Scores by each player.
 
 ![](plots/tov_scores.png)
-Analysis - evaluate score to negative statistic to see if it correlates with negative performance - similar centers of distribution and most IQRs lying from 2.5-3.5 indicates that higher scores indicate greater turnovers or negative performance
+According to the plot, similar centers of distribution provide evidence that the score metric does not directly reflect a player's negative performance. A higher score is not associated with more tunrovers. Furthermore, most of the IQRs lying from 2.5-3.5 indicates that the score metric remains consistent no matter how badly a player's "decision-making" is. This validates the score metric because it is not associated with negative player performance.
+
+Next, I am visualizing the relationship between the recorded NBA GameScore across games for each player and the new score metric. The NBA GameScore is a marker of player efficiency in a given game. It takes into account numerous statistics contributing to a game and properly weighs them in a final calculation. This provides as another test of validation to see if the new score metric can effectively measure how valuable a player is.
 
 ![](plots/gmsc_scores.png)
+In the scatterplot above, the linear line of best fit for each player reflects a strongly, positive relationship between the Score and GameScore. Since there is directly proportional relationship and a relatively high correlation of points (seen by clustering), it can be noted that the Score is a validated measure of player performance.
+
+#### Tie breaker between Jordan and Lebron
+
+Finally, I decided the best way to break the tie between Jordan and Lebron's number of most valuable seasons is to quantify the win success in both the regular season and postseason according to their statisical contribution. This would be accomplished by comparing the new score metric to total wins. More wins correlating with greater Scores would prove who is the most valuable out of both for actual team success.
 
 ![](plots/wins_score.png)
+The first plot overwhelmingly supports Lebron over Jordan as the greatest player of all time. This is because Lebron James has far greater wins in the (3-4) score category, which was representative of all the greatest average Scores across all fifteen years evaluated. Also, there is a miniscule difference in wins between Lebron and Jordan in the rest of the Score categories. This graphic also reveals that Kobe won much more games with a lower Score, indicating the presence of help like Shaq or Pau Gasol during most of his career.
 
+To ensure this graphic was not spreading misinformation, I also decided to look into the win totals between each of the players across the fifteen year span. Playing and winning a varied number of games could drastically impact the analysis. This led to searching for total games won by each player.
 
 ```{r}
 #| echo: false
@@ -691,10 +702,22 @@ as_summary <- allgames_stats |>
 kable(as_summary)
 ```
 
-![](plots/prop_score.png)
+As indicated by the table, Kobe Bryant and Lebron James have much more games won than Michael Jordan. This could be attributed to Jordan's early retirement as well as the NBA lockout in his last season. Wanting to normalize the win success across all three players, I diverted my focus to the proportion of total wins separated by scores given by the new metric. 
 
+![](plots/prop_score.png)
+The final plot reveals a normalization of win success to properly analyze how much each player's statistical contributions applied to winning games in the both the regular season and the playoffs. According to the graphic, Lebron James surpasses both Kobe Bryant and Michael Jordan in the proportion of total wins in the 3-4 Score category. This means that Lebron's statistical contributions prove to be more valuable for winning than the other players. Although Jordan may have a slight edge in the 4-5 Score category, this difference along with that in the other Score categories are almost negligible. Also, these other categories are not as reflective of each player's average performance in a given game.
 
 ## Conclusion
+
+To conclude, the thorough data analysis found that Lebron James is the greatest basketball player of all time.
+
+begin - MVPs
+
+longevity - got better over time
+
+greater contribution to win success
+
+
 So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
 
 ## References
