@@ -673,6 +673,10 @@ Reflecting on all three plots, analyzing the relationships reveal that Michael J
 
 
 
+![](plots/tov_scores.png)
+Analysis - evaluate score to negative statistic to see if it correlates with negative performance - similar centers of distribution and most IQRs lying from 2.5-3.5 indicates that higher scores indicate greater turnovers or negative performance
+
+![](plots/gmsc_scores.png)
 
 ## Conclusion
 So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
