@@ -65,16 +65,83 @@ ggsave(
 
 ## comparing Score with win totals (success) ----
 
-allgames_stats$Date <- ymd(allgames_stats$Date)
 
-# Group by years and perform aggregation as needed
+# see total wins by players
 as_summary <- allgames_stats |> 
-  filter(RSorPO == "Regular Season") |> 
-  mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
-  group_by(year = year(date)) |> 
   group_by(Player) |> 
   summarise(Win_Total = sum(Result == "W", na.rm = TRUE))
 
+kable(as_summary)
+
+
+# find win total and group Score into categories
+ag_win <- allgames_stats |> 
+  arrange(Date) |> 
+  group_by(Player) |> 
+  mutate(Win_Total = sum(Result == "W", na.rm = TRUE),
+         Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000,
+         Score_Category = cut(Score, 
+                              breaks = c(0, 1, 2, 3, 4, 5, 6, 7, Inf),
+                              labels = c("0-1", "1-2", "2-3", "3-4", "4-5",
+                                         "5-6", "6-7", "Other")))
+
+# calculate total wins for each category and player
+ag_win_totals <- ag_win |> 
+  group_by(Player, Score_Category) |> 
+  summarize(Total_Wins = sum(Result == "W", na.rm = TRUE))
+
+# make dodged barplot
+wins_score <- ggplot(ag_win_totals, aes(x = Score_Category, y = Total_Wins, fill = Player)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) +
+  labs(title = "Total Wins by Score Category and Player",
+       x = "Score Category",
+       y = "Total Wins") +
+  scale_fill_brewer(palette = "Set1") +
+  theme_minimal()
+
+# save
+ggsave(
+  filename = "plots/wins_score.png",
+  plot = wins_score,
+  units = "in",
+  width = 6,
+  height = 4
+)
+
+
+
+
+# calculate total wins for each player
+total_wins_by_player <- ag_win |> 
+  group_by(Player) |> 
+  summarize(Total_Wins = sum(Result == "W", na.rm = TRUE))
+
+# merge 2 datasets for proportion
+ag_win_prop <- merge(ag_win_totals, total_wins_by_player, by = "Player") |> 
+  mutate(Proportion = Total_Wins.x / Total_Wins.y)
+
+# make dodged barplot
+prop_score <- ggplot(ag_win_prop, aes(x = Score_Category, y = Proportion, fill = Player)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) +
+  labs(title = "Proportion of Wins by Score and Player",
+       x = "Score Category",
+       y = "Proportion of Total Wins") +
+  scale_fill_brewer(palette = "Set1") +
+  theme_minimal()
+
+
+# save
+ggsave(
+  filename = "plots/prop_score.png",
+  plot = prop_score,
+  units = "in",
+  width = 6,
+  height = 4
+)
+
+
+
+# extra stuff
 win_totals <- allgames_stats |> 
   filter(RSorPO == "Regular Season", Player == "Kobe Bryant") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
@@ -101,14 +168,14 @@ ag_win <- allgames_stats %>%
   mutate(Win_Total = sum(Result == "W", na.rm = TRUE)) |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
   mutate(Score_Category = case_when(
-  Score >= 0 & Score <= 1 ~ "0-1",
-  Score > 1 & Score <= 2 ~ "1-2",
-  Score > 2 & Score <= 3 ~ "2-3",
-  Score > 3 & Score <= 4 ~ "3-4",
-  Score > 4 & Score <= 5 ~ "4-5",
-  Score > 5 & Score <= 6 ~ "5-6",
-  Score > 6 & Score <= 7 ~ "6-7",
-  TRUE ~ "Other"
+    Score >= 0 & Score <= 1 ~ "0-1",
+    Score > 1 & Score <= 2 ~ "1-2",
+    Score > 2 & Score <= 3 ~ "2-3",
+    Score > 3 & Score <= 4 ~ "3-4",
+    Score > 4 & Score <= 5 ~ "4-5",
+    Score > 5 & Score <= 6 ~ "5-6",
+    Score > 6 & Score <= 7 ~ "6-7",
+    TRUE ~ "Other"
   ))
 
 
@@ -120,5 +187,3 @@ ggplot(ag_win, aes(x = Score_Category, y = Win_Total, fill = Player)) +
        y = "Proportion of Wins") +
   scale_fill_brewer(palette = "Set1") +
   theme_minimal()
-
-

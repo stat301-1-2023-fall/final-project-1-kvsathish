@@ -678,6 +678,21 @@ Analysis - evaluate score to negative statistic to see if it correlates with neg
 
 ![](plots/gmsc_scores.png)
 
+![](plots/wins_score.png)
+
+
+```{r}
+#| echo: false
+
+as_summary <- allgames_stats |> 
+  group_by(Player) |> 
+  summarise(Win_Total = sum(Result == "W", na.rm = TRUE))
+
+kable(as_summary)
+```
+
+![](plots/prop_score.png)
+
 
 ## Conclusion
 So far, I am proud of the data analysis performed, but there is definitely room for improvement. One area that is tough to get around is adjusting the scores to their respective time period accordingly. During various times in NBA history, the style of the game shifted in terms of strategy, defensive intensity, spacing, and scoring. To account for this in future analysis, I plan to adjust Point scored by each player to account for point inflation/deflation during different years. This could be done with a comparison between points scored and total points averaged by the respective team.
