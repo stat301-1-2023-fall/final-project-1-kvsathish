@@ -205,6 +205,15 @@ kscore_time <- ggplot(kobe_scores, aes(x = Date, y = Score)) +
   geom_smooth(method = "lm", se = FALSE) +
   theme_minimal()
 
+ggplot(kobe_scores, aes(x = Date, y = Score)) +
+  geom_point() +
+  labs(title = "Scatterplot of Score vs. Year for Kobe Bryant",
+       x = "Year",
+       y = "Score") +
+  geom_smooth() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+
 ggsave(
   filename = "plots/kscore_time.png",
   plot = kscore_time,
