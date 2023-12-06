@@ -3,8 +3,8 @@
 
 ## load packages ----
 library(tidyverse)
-library(palmerpenguins)
 library(knitr)
+library(lubridate)
 
 ## read in data ----
 allgames_stats <- read_csv("data/allgames_stats.csv")
@@ -24,24 +24,16 @@ p_scores <- allgames_stats %>%
     TRUE ~ "Other"
   ))
 
-ggplot(p_scores, aes(x = Score, y = Turnovers_Category, fill = Player)) +
+tov_scores <- ggplot(p_scores, aes(x = Score, y = Turnovers_Category, fill = Player)) +
   geom_boxplot(position = "dodge") +
-  labs(title = "Dodged Barplot of Score by Turnovers and Player",
+  labs(title = "Dodged Boxplots of Score by Turnovers and Player",
        x = "Score",
        y = "Turnovers",
        fill = "Player")
 
-jscore_time <- ggplot(jordan_scores, aes(x = Date, y = Score)) +
-  geom_point() +
-  labs(title = "Scatterplot of Score vs. Year for Michael Jordan",
-       x = "Year",
-       y = "Score") +
-  geom_smooth() +
-  geom_smooth(method = "lm", se = FALSE) +
-  theme_minimal()
 
 ggsave(
-  filename = "plots/jscore_time.png",
-  plot = jscore_time,
+  filename = "plots/tov_scores.png",
+  plot = tov_scores,
   units = "in"
 )

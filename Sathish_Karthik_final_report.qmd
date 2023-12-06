@@ -80,8 +80,10 @@ library(tidyverse)
 library(knitr)
 library(naniar)
 library(lubridate)
+library(kableExtra)
 allgames_stats <- read_csv("data/allgames_stats.csv")
 ```
+
 
 ### Analyzing key variables
 
@@ -665,7 +667,7 @@ In this plot, the smoothed trend line is somewhat erratic through the course of 
 ![](plots/kscore_time.png)
 In this plot, the smoothed trend line is demonstrates Kobe Bryant had greater scores in the middle of his career, compared to the beginning and end. Meanwhile, the linear line of best fit reflects a weakly, positive relationship between `Year` and `Score`. 
 
-Reflecting on all three plots, analyzing the relationships reveal that Michael Jordan was most valuable to his team in the first five years of his career, Kobe Bryant peaked in terms of his statistical contributions in the middle five years of his career, and Lebron James was the most meaningful to his teams in the seasons 10-15 of his career.
+Reflecting on all three plots, analyzing the relationships reveal that Michael Jordan was most valuable to his team in the first five years of his career, Kobe Bryant peaked in terms of his statistical contributions in the middle five years of his career, and Lebron James was the most meaningful to his teams in seasons 10-15 of his career.
 
 ### Evaluating the score metric (multivariate analyses)
 

@@ -3,8 +3,8 @@
 
 ## load packages ----
 library(tidyverse)
-library(palmerpenguins)
 library(knitr)
+library(kableExtra)
 
 ## read in data ----
 allgames_stats <- read_csv("data/allgames_stats.csv")
@@ -210,6 +210,7 @@ ggsave(
   plot = kscore_time,
   units = "in"
 )
+
 
 
 

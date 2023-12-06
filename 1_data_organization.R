@@ -3,7 +3,6 @@
 
 ## load packages ----
 library(tidyverse)
-library(palmerpenguins)
 library(knitr)
 library(lubridate)
 
