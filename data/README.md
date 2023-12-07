@@ -29,5 +29,6 @@ First, the `NA` values that indicated home vs. away games were inconsequential f
 
 The dataset for analysis is named `Michael Jordan, Kobe Bryant and Lebron James stats`.
 - Found on [https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv](https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv)
+
 Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference.
 - Found on [https://www.basketball-reference.com/](https://www.basketball-reference.com/) 
