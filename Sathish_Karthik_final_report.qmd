@@ -683,7 +683,7 @@ Next, I am visualizing the relationship between the recorded NBA GameScore acros
 ![](plots/gmsc_scores.png)
 In the scatterplot above, the linear line of best fit for each player reflects a strongly, positive relationship between the Score and GameScore. Since there is directly proportional relationship and a relatively high correlation of points (seen by clustering), it can be noted that the Score is a validated measure of player performance.
 
-#### Tie breaker between Jordan and Lebron
+#### Tie-breaker between Jordan and Lebron
 
 Finally, I decided the best way to break the tie between Jordan and Lebron's number of most valuable seasons is to quantify the win success in both the regular season and postseason according to their statisical contribution. This would be accomplished by comparing the new score metric to total wins. More wins correlating with greater Scores would prove who is the most valuable out of both for actual team success.
 

@@ -1,7 +1,7 @@
 ---
-title: "Executive Summary"
+title: "The Greatest Basketball Player of All Time"
 subtitle: |
-  | Final Project 
+  | Final Project - Executive Summary
   | Data Science 1 with R (STAT 301-1)
 author: "Karthik Sathish"
 date: today
@@ -25,3 +25,43 @@ from: markdown+emoji
 
 [My Github Repo Link](https://github.com/stat301-1-2023-fall/final-project-1-kvsathish)
 :::
+
+## The GOAT of Basketball
+
+Following the exploration of key statistics to evaluate overall player performance in all games played throughout the first fifteen years of their respective careers, the greatest basketball player of all time between Kobe Bryant, Michael Jordan, and Lebron James is revealed. The new Score metric, validation of Score, and overall win success are presented in this report.
+
+## Evaluating Players by the Score Metric
+
+To address the objective of uncovering the GOAT, all three individuals are evaluated by who was the most valuable player (MVP) between them across the first fifteen seasons of their careers. The player found to be the most valuable the greatest number of times is the greatest. Although MVP in the NBA is subject to a player's merit and team success, the new Score metric measures overall player performance and contributions in a given game.
+
+A more statistically based award, points, assists, rebounds, steals, and blocks are weighed equally on top of minutes played to reach a holistic Score for the evaluation of MVP. Points scored are adjusted by the different eras each player was a part of. Once this Score metric is calculated for each game played in a given season for a player, the average of all Scores in a season are computed as a final reflection for comparison. The greatest final average score, each season, justifies who is the MVP. Then, MVPs are summed for each player to deduce the greatest player based on their overall contributions to the game.
+
+According to the average scores found across the first fifteen seasons, there is a tie in MVPs awarded to Lebron James and Michael Jordan. Each of the two legends achieved the highest average Score for seven seasons. Since Lebron and Jordan were proven as equally valuable or great, the Score metric was also visualized over time. 
+
+![](plots/lscore_time.png)
+
+Above, a linear line of best fit reflects a moderately, positive relationship between `Year` and `Score`. This is an argument for Lebron's greatness because he was the only player that exhibited significant improvement in the Score metric over the course of his first fifteen years in the league. Peaking in statistical performance in his fifteenth season, Lebron has retained his valuable contributions statistically for at least five more years, to this day, than Kobe Bryant or Michael Jordan. This is a testament to Lebron's remarkable longevity.
+
+## Validation of the Score Metric
+
+The first test of credibility for Score checked whether there was correlation between a player's `Score` and bad performance. Using turnovers, a statistic representative of poor decision-making, the relationship between `Score` and `Turnovers` across players was visualized. There appeared to be consistency of the Score metric throughout varying values of Turnovers, validating the Score metric because a higher Score was not associated with more negative contributions from a player.
+
+Next, the relationship between NBA GameScore and the Score metric was visualized. Since NBA GameScore is a credible marker of player efficiency in a given game, comparison to the new Score metric would prove if Scores accurately measure how valuable a player is in a given game. Results reflected a directly proportional relationship between `Score` and `GameScore`. Also having a high linear correlation of points, the visualization validated Score as an effective measure of player performance.
+
+## The Tie-Breaker for Greatness
+
+To break the tie between Michael Jordan and Lebron James' number of most valuable seasons, their statistical contributions through Scores are compared to their overall wins, respectively. More wins correlated with greater Scores prove who is the most valuable for team success. Since Lebron James and Michael Jordan have a significant difference in total games won, win success was normalized by utilizing proportions.
+
+![](plots/prop_score.png)
+
+In the graphic above, Lebron James surpasses Kobe Bryant and Michael Jordan in the proportion of total wins in the 3-4 Score category. This category constitutes the average Score for the MVP across all 15 seasons. Also, the minimal differences in Score categories below three and above four prove to be negligible. This reveals that Lebron, on average, significantly contributed to a greater proportion of wins in both the regular season and playoffs. The tie-breaker goes to Lebron James, meaning he is the GOAT! 
+
+
+## Final Reflection
+
+The central question revolving around the GOAT of basketball can finally be answered. From the thorough data analysis, Lebron James emerges as the greatest basketball player of all time. After the new Score metric revealed Lebron James and Michael Jordan as equally great, the tie-breaker found that Lebron James contributed more to winning or team success than Michael Jordan.
+
+
+## References
+
+The dataset for analysis is named `Michael Jordan, Kobe Bryant and Lebron James stats`^[Found on [https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv](https://www.kaggle.com/datasets/xvivancos/michael-jordan-kobe-bryant-and-lebron-james-stats/data?select=per_game_stats.csv)]. Although all the stats were compiled by Xavier, the raw statistical data is from Basketball Reference^[Found on [https://www.basketball-reference.com/](https://www.basketball-reference.com/)].
