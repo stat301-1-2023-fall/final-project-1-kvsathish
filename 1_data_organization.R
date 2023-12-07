@@ -25,7 +25,7 @@ allgames_stats |>
 
 ## create a codebook for the data ----
 
-# done in a new text file saved in data folder
+# done in a new text file and saved in data folder
 
 ## univariate analyses ----
 
