@@ -13,6 +13,7 @@ allgames_stats
 
 ## comparing Score and TOs ----
 
+# find scores for all players and categorize turnovers
 p_scores <- allgames_stats |> 
   filter(RSorPO == "Regular Season") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
@@ -24,6 +25,7 @@ p_scores <- allgames_stats |>
     TRUE ~ "Other"
   ))
 
+# plot turnovers against score by players
 tov_scores <- ggplot(p_scores, aes(x = Score, y = Turnovers_Category, fill = Player)) +
   geom_boxplot(position = "dodge") +
   labs(title = "Distributions of Score by Turnovers and Player",
@@ -32,7 +34,7 @@ tov_scores <- ggplot(p_scores, aes(x = Score, y = Turnovers_Category, fill = Pla
        fill = "Player") +
   theme_minimal()
 
-
+# save plot
 ggsave(
   filename = "plots/tov_scores.png",
   plot = tov_scores,
@@ -42,10 +44,13 @@ ggsave(
 
 
 ## comparing Score and GmSc
+
+# find scores for all players
 g_scores <- allgames_stats |> 
   filter(RSorPO == "Regular Season") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000)
 
+# plot the nba gamescore against new score metric by players
 gmsc_scores <- ggplot(g_scores, aes(x = Score, y = GmSc, color = Player)) +
   geom_point(alpha = 0.15) +
   labs(title = "Comparison of Score and NBA GameScore Across Players",
@@ -54,6 +59,7 @@ gmsc_scores <- ggplot(g_scores, aes(x = Score, y = GmSc, color = Player)) +
   geom_smooth(method = "lm", se = FALSE) +
   theme_minimal()
 
+# save plot
 ggsave(
   filename = "plots/gmsc_scores.png",
   plot = gmsc_scores,
@@ -74,7 +80,7 @@ as_summary <- allgames_stats |>
 kable(as_summary)
 
 
-# find win total and group Score into categories
+# find win total and group score into categories
 ag_win <- allgames_stats |> 
   arrange(Date) |> 
   group_by(Player) |> 
@@ -99,7 +105,7 @@ wins_score <- ggplot(ag_win_totals, aes(x = Score_Category, y = Total_Wins, fill
   scale_fill_brewer(palette = "Set1") +
   theme_minimal()
 
-# save
+# save plot
 ggsave(
   filename = "plots/wins_score.png",
   plot = wins_score,
@@ -109,7 +115,7 @@ ggsave(
 )
 
 
-
+# finding propotion of wins by score category ----
 
 # calculate total wins for each player
 total_wins_by_player <- ag_win |> 
@@ -130,7 +136,7 @@ prop_score <- ggplot(ag_win_prop, aes(x = Score_Category, y = Proportion, fill =
   theme_minimal()
 
 
-# save
+# save plot
 ggsave(
   filename = "plots/prop_score.png",
   plot = prop_score,
@@ -142,6 +148,7 @@ ggsave(
 
 
 ## extra stuff ----
+
 win_totals <- allgames_stats |> 
   filter(RSorPO == "Regular Season", Player == "Kobe Bryant") |> 
   mutate(Score = (PTS + AST + TRB + STL + BLK) / as.numeric(MP) * 10000) |> 
@@ -179,7 +186,6 @@ ag_win <- allgames_stats |>
   ))
 
 
-# make dodged barplot
 ggplot(ag_win, aes(x = Score_Category, y = Win_Total, fill = Player)) +
   geom_bar(stat = "identity", position = "dodge", width = 0.7) +
   labs(title = "Proportion of Wins by Score and Player",
